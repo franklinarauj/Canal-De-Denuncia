@@ -1,0 +1,35 @@
+<div class="mat-elevation-z4">
+
+    <mat-card style="padding-bottom: 15px;">
+        <mat-card-title>
+            <i class="material-icons iconTitle">
+                pageview
+            </i>
+            Denúncias Arquivadas
+        </mat-card-title>
+    </mat-card>
+
+    <mat-divider></mat-divider>
+
+    <div>
+        <mat-card>
+
+            <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Número do protocolo</mat-label>
+                    <input matInput placeholder="Número do protocolo" maxlength="10">
+                    <mat-icon matPrefix class="material-icons iconInput" (click)="readProduct()"
+                    style="display: flex; margin-right: 10px; font-size: 20px; color: #ffffff80; cursor: pointer;"
+                    >search</mat-icon> <!-- Assim que coloca ícones em inputs -->
+                    <mat-hint>Obs.: O protoloco possui 10 números.</mat-hint>
+                </mat-form-field>
+            </p>
+            <!-- <button mat-raised-button (click)="readProduct()" class="search">
+                Procurar
+            </button> -->
+        </mat-card>
+    </div>
+
+    <mat-divider></mat-divider>
+
+</div>

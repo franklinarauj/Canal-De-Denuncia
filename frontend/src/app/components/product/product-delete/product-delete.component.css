@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button {
+    margin: 20px 15px 0px 0px;
+}
+
+.iconInput {
+    display: flex;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #ffffff80;
+}
+
+.iconTitle {
+    vertical-align: text-bottom;
+    margin-bottom: 2px;
+}

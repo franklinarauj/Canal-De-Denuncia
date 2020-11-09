@@ -1,0 +1,104 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "2020000001",
+      "category": "Assédio Moral",
+      "department": "RH",
+      "date": "09-08-2020",
+      "email": "email-1@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 2,
+      "name": "2020000002",
+      "category": "Assédio Sexual",
+      "department": "TI",
+      "date": "11-10-2020",
+      "email": "email-2@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 3,
+      "name": "2020000003",
+      "category": "Importunação",
+      "department": "Estoque",
+      "date": "05-04-2020",
+      "email": "email-3@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 4,
+      "name": "2020000004",
+      "category": "Irregularidade Fiscal",
+      "department": "Financeiro",
+      "date": "01-07-2020",
+      "email": "email-4@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 5,
+      "name": "2020000005",
+      "category": "Outros",
+      "department": "Operacional",
+      "date": "01-01-2020",
+      "email": "email-5@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 6,
+      "name": "2020000006",
+      "category": "Desvio de Verba",
+      "department": "Empresarial",
+      "date": "03-10-2020",
+      "email": "email-6@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 7,
+      "name": "2020000007",
+      "category": "Difamação",
+      "department": "Distribuição",
+      "date": "06-03-2020",
+      "email": "email-7@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 8,
+      "name": "2020000008",
+      "category": "Humilhação",
+      "department": "Administração",
+      "date": "11-11-2020",
+      "email": "email-8@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 9,
+      "name": "2020000009",
+      "category": "Má Conduta",
+      "department": "Atendimento",
+      "date": "10-30-2020",
+      "email": "email-9@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    },
+    {
+      "id": 10,
+      "name": "2020000010",
+      "category": "Abuso de Poder",
+      "department": "Logística",
+      "date": "02-18-2020",
+      "email": "email-10@gmail.com",
+      "contact": "61 98765-4321",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam suscipit pellentesque mauris, a pulvinar velit accumsan et. Maecenas sed tristique magna. Curabitur volutpat elementum dolor, vitae condimentum metus convallis in. Cras imperdiet cursus justo vitae tincidunt. Sed quis dui blandit, pellentesque odio sed, consectetur purus. Donec scelerisque diam eu turpis."
+    }
+  ]
+}

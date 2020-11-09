@@ -1,0 +1,57 @@
+<mat-card>
+
+    <mat-card-title>
+        <i class="material-icons iconTitle">
+            create
+        </i>
+        Alterar Denúncia
+    </mat-card-title>
+
+    <form>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">text_fields</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="Nome do Envolvido" [(ngModel)]="product.name" name="name" required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">category</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="Categoria" [(ngModel)]="product.category" name="category" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">room</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="Setor Envolvido" [(ngModel)]="product.department" name="department" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">today</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="Data" [(ngModel)]="product.date" name="date" type="date" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">email</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="E-mail para Contato" [(ngModel)]="product.email" name="email" type="email" pattern=".+@gmail.com" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">call</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <input matInput placeholder="Telefone para Contato" [(ngModel)]="product.contact" name="contact" type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">comment</mat-icon>  <!-- Assim que coloca ícones em inputs -->
+            <!-- <input matInput placeholder="Descrição" [(ngModel)]="product.description" name="description" type="text" required> -->
+            <textarea matInput placeholder="Descrição" [(ngModel)]="product.description" name="description" type="text" required cols="80" rows="8" required></textarea>
+        </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button (click)="updateProduct()" color="primary">
+        Alterar
+    </button>    
+    <button mat-raised-button (click)="cancel()" color="accent">
+        Cancelar
+    </button>
+
+</mat-card>

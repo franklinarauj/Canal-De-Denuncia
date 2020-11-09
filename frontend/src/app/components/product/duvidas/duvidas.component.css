@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+}
+
+button {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.container {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    display: flex;
+}
+
+.container .btn-holder {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.read {
+    margin-right: 10px;
+}
+
+.read>i {
+    color: #328bdf;
+}
+
+.iconInput {
+    vertical-align: text-bottom;
+    margin-bottom: 5px;
+  }
+
+.iconTitle {
+    vertical-align: text-bottom;
+    margin-bottom: 2px;
+}
+
+.home .subtitle {
+    font-size: 1.1rem;
+}
+
+
+.search {
+    background-color: #328bdf;
+    justify-content: right;
+    display: flex;
+}
