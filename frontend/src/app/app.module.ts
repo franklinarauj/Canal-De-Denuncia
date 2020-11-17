@@ -28,6 +28,7 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule} from '@angular/material/dialog';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -53,7 +54,7 @@ registerLocaleData(localePt);
     ProductDeleteComponent,
     DenunciasArquivadasComponent,
     DenunciaComponent,
-    DuvidasComponent,
+    DuvidasComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +73,8 @@ registerLocaleData(localePt);
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [{
     provide: LOCALE_ID,

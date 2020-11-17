@@ -19,16 +19,16 @@
   <mat-divider></mat-divider>
 
   <table mat-table [dataSource]="products" matSort>
-    <!-- Id Column -->
+    <!-- Id/Protocolo Column -->
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Id</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Protocolo</th>
       <td mat-cell *matCellDef="let product">{{ product.id }}</td>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Protocolo</th>
-      <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px" hidden>Protocolo</th>
+      <td mat-cell *matCellDef="let product" hidden>{{ product.name }}</td>
     </ng-container>
 
     <!-- Category Column -->
@@ -47,6 +47,7 @@
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Data</th>
       <td mat-cell *matCellDef="let product">{{ product.date | date }}</td>
+      <!-- <td mat-cell *matCellDef="let product">{{ product.date | date: 'medium' }}</td> -->
     </ng-container>
 
     <!-- Email Column -->

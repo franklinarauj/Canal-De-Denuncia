@@ -9,6 +9,7 @@ import { Product } from './../product.model';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
+
   product: Product;
 
   constructor(
@@ -21,12 +22,13 @@ export class ProductUpdateComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.readById(id).subscribe(product => {
       this.product = product;
+      console.log(product)
     });
   }
 
   updateProduct(): void {
     this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage('Produto atualizado com sucesso!');
+      this.productService.showMessage('Denúncia atualizada com sucesso!');
       this.router.navigate(['/products']);
     });
   }

@@ -9,13 +9,17 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./denuncia.component.css']
 })
 export class DenunciaComponent implements OnInit {
+  
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  
   product: Product;
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
-
-  products: Product[]
-
   ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productService.readById(id).subscribe(product => {
+      this.product = product;
+      console.log(product)
+    });
   }
 
   navigateToDenunciasCadastradas(): void {

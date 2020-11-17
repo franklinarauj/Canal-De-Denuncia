@@ -1,16 +1,24 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, enableProdMode } from '@angular/core';
 import { Product } from './product.model';
 import { Observable, EMPTY } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+
+enableProdMode();
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:3001/products";
+
+  getDenuncia = "http://localhost:8000/getDenuncia";
+  getDenunciaById = "http://localhost:8000/getDenunciaById";
+  createDenuncia = "http://localhost:8000/createDenuncia";
+  editDenuncia = "http://localhost:8000/editDenuncia";
+  deleteDenuncia = "http://localhost:8000/deleteDenuncia";
 
   constructor(
     private snackBar: MatSnackBar, 
@@ -33,7 +41,7 @@ export class ProductService {
 
   // Cria uma denuncia
   create(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.baseUrl, product).pipe(
+    return this.http.post<Product>(this.createDenuncia, product).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
       );
@@ -41,15 +49,15 @@ export class ProductService {
 
   // Obtem todos as denuncias
   read(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.baseUrl).pipe(
+    return this.http.get<Product[]>(this.getDenuncia).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
       );
   }
 
   // Obtem uma denuncia pelo id
-  readById(id: number): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`;
+  readById(id): Observable<Product> {
+    const url = `${this.getDenunciaById}/${id}`;
     return this.http.get<Product>(url).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
@@ -58,7 +66,7 @@ export class ProductService {
 
   // Atualiza uma denuncia
   update(product: Product): Observable<Product> {
-    const url = `${this.baseUrl}/${product.id}`;
+    const url = `${this.editDenuncia}/${product.id}`;
     return this.http.put<Product>(url, product).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))
@@ -66,8 +74,8 @@ export class ProductService {
   }
 
   // Deleta uma denuncia
-  delete(id: number): Observable<Product> {
-    const url = `${this.baseUrl}/${id}`;
+  delete(id): Observable<Product> {
+    const url = `${this.deleteDenuncia}/${id}`;
     return this.http.delete<Product>(url).pipe(
       map(obj => obj),
       catchError(e => this.errorHandler(e))

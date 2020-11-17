@@ -9,28 +9,25 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./denuncias-arquivadas.component.css']
 })
 export class DenunciasArquivadasComponent implements OnInit {
-  product: Product;
-
+  
   constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
-
-  products: Product[]
-
+  
+  product: Product;
+  
   ngOnInit(): void {
   }
   
-  readProduct() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.productService.readById(id).subscribe(product => {
-      this.product = product;
-    });
-
-    this.productService.read().subscribe(products => {
-      this.products = products
-      console.log(products)
-    });
-  }
-
   navigateToDenunciaArquivada(): void {
     this.router.navigate(['/denuncias-arquivadas'])
   }
+  
+  navigateToDenuncia(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productService.readById(id).subscribe(product => {
+      this.product = product;
+      console.log(product)
+    });
+    this.router.navigate(['/products/read/', id])
+  }
+
 }

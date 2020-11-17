@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ProductCreateComponent implements OnInit {
 
-  product: Product = {
+ product: Product = {
+    id: '',
     name: '',
     category: '',
     department: '',
@@ -18,16 +19,23 @@ export class ProductCreateComponent implements OnInit {
     email: '',
     contact: '',
     description: ''
-  }
+}
   
   constructor(private productService: ProductService, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+  }
+
+  generateId(): string {
+      var data = new Date(), anoAtual = data.getFullYear();
+      var base = anoAtual;
+      return base + Math.random().toString(11).substr(2, 6);
   }
 
   createProduct(): void {
-  this.productService.create(this.product).subscribe(() => {
-    this.productService.showMessage('Produto criado!')
+    this.product.id = this.generateId();
+    this.productService.create(this.product).subscribe(() => {
+    this.productService.showMessage('Denúncia criada!')
     this.router.navigate(['/products'])
   })
 

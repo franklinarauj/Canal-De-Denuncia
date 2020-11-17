@@ -2,11 +2,17 @@ table {
     width: 100%;
 }
 
+form {
+    display: flex;   
+    flex-direction: column;
+    margin-top: 20px;
+}
+
 button {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
     font-size: 15px;
+    margin: 20px 15px 0px 0px;
 }
 
 .container {
@@ -20,26 +26,15 @@ button {
     display: flex;
 }
 
-.read {
-    margin-right: 10px;
-}
-
-.read>i {
-    color: #328bdf;
-}
-
 .iconInput {
     vertical-align: text-bottom;
     margin-bottom: 5px;
-  }
+    display: flex;
+    margin-right: 10px;
+    font-size: 20px;
+}
 
 .iconTitle {
     vertical-align: text-bottom;
     margin-bottom: 2px;
-}
-
-.search {
-    background-color: #328bdf;
-    justify-content: right;
-    display: flex;
 }
