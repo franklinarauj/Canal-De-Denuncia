@@ -13,20 +13,116 @@
 
     <mat-divider></mat-divider>
 
-    <div>
+    <!-- <div>
         <mat-card>
 
             <mat-form-field appearance="outline">
                 <mat-label>Número do protocolo</mat-label>
-                <input matInput placeholder="Número do protocolo" type="search" maxlength="10">
-                <mat-icon matSuffix class="material-icons iconInput" (click)="navigateToDenuncia()"
+                <input matInput placeholder="Número do protocolo" [attr.id]="id?id:null" type="search" maxlength="10">
+                <mat-icon matSuffix class="material-icons iconInput" (click)="navigateToDenuncia(id)"
                     style="display: flex; margin-right: 10px; font-size: 20px; color: #ffffff80; cursor: pointer;">
-                    search</mat-icon> <!-- Assim que coloca ícones em inputs -->
+                    search</mat-icon> 
                 <mat-hint>Obs.: O protoloco possui 10 números.</mat-hint>
-                <!-- <a routerLink="/products/read/{{ product.id }}"></a> -->
             </mat-form-field>
 
         </mat-card>
-    </div>
-    
+    </div> -->
+
+    <mat-divider></mat-divider>
+
+    <table mat-table [dataSource]="products" matSort>
+        <!-- Id/Protocolo Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Protocolo</th>
+            <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px" hidden>Protocolo</th>
+            <td mat-cell *matCellDef="let product" hidden>{{ product.name }}</td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Categoria</th>
+            <td mat-cell *matCellDef="let product">{{ product.category }}</td>
+        </ng-container>
+
+        <!-- Department Column -->
+        <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Departamento</th>
+            <td mat-cell *matCellDef="let product">{{ product.department }}</td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">Data</th>
+            <td mat-cell *matCellDef="let product">{{ product.date | date }}</td>
+            <!-- <td mat-cell *matCellDef="let product">{{ product.date | date: 'medium' }}</td> -->
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header style="font-size: 15px">E-mail</th>
+            <td mat-cell *matCellDef="let product">{{ product.email }}</td>
+        </ng-container>
+
+        <!-- Contact Column -->
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef mat-sort-heade style="font-size: 15px">Contato</th>
+            <td mat-cell *matCellDef="let product">{{ product.contact }}</td>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef style="font-size: 15px">Ações</th>
+            <td mat-cell *matCellDef="let product">
+                <a routerLink="/products/read/{{ product.id }}" class="read">
+                    <i class="material-icons">
+                        forward
+                    </i>
+                </a>
+                <button (click)="desarquivaDenuncia(product)" class="arquivar">
+                    <i class="material-icons">unarchive</i>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let product; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator length="products.length" [pageSize]="10" [pageSizeOptions]="[1, 5, 15, 20, 25]"
+        showFirstLastButtons>
+    </mat-paginator>
+
 </div>
+
+<!-- <div style="margin-top: 5px;">
+    <mat-divider></mat-divider>
+
+    <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+
+    <mat-spinner color="accent"></mat-spinner>
+
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+
+    <mat-progress-bar mode="buffer" color="primary"></mat-progress-bar>
+
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+
+    <mat-spinner color="warn"></mat-spinner>
+
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+
+    <mat-progress-bar mode="query" color="warn"></mat-progress-bar>
+
+    <mat-divider></mat-divider>
+</div> -->

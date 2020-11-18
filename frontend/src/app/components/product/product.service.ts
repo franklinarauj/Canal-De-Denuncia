@@ -16,6 +16,7 @@ export class ProductService {
 
   getDenuncia = "http://localhost:8000/getDenuncia";
   getDenunciaById = "http://localhost:8000/getDenunciaById";
+  getDenunciaArquivada = "http://localhost:8000/getDenunciaArquivada";
   createDenuncia = "http://localhost:8000/createDenuncia";
   editDenuncia = "http://localhost:8000/editDenuncia";
   deleteDenuncia = "http://localhost:8000/deleteDenuncia";
@@ -55,6 +56,14 @@ export class ProductService {
       );
   }
 
+  // Obtem todos as denuncias
+  readArquivada(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.getDenunciaArquivada).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+      );
+  }
+
   // Obtem uma denuncia pelo id
   readById(id): Observable<Product> {
     const url = `${this.getDenunciaById}/${id}`;
@@ -81,4 +90,24 @@ export class ProductService {
       catchError(e => this.errorHandler(e))
       );
   }
+
+  // Arquiva Denuncia
+  updateArquivada(product: Product): Observable<Product> {
+    const url = `${this.editDenuncia}/${product.id}`;
+    return this.http.put<Product>(url, product).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+      );
+  }
+
+  // Desarquiva Denuncia
+  updateDesarquivada(product: Product): Observable<Product> {
+    const url = `${this.editDenuncia}/${product.id}`;
+    console.log(product);
+    return this.http.put<Product>(url, product).pipe(
+      map(obj => obj),
+      catchError(e => this.errorHandler(e))
+      );
+  }
+
 }

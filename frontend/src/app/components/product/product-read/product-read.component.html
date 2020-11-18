@@ -76,6 +76,9 @@
             edit
           </i>
         </a>
+        <button (click)="arquivaDenuncia(product)" class="arquivar">
+          <i class="material-icons">archive</i>
+        </button>
         <a routerLink="/products/delete/{{ product.id }}" class="delete">
           <i class="material-icons">
             delete

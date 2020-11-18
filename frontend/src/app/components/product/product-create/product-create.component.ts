@@ -18,7 +18,8 @@ export class ProductCreateComponent implements OnInit {
     date: '',
     email: '',
     contact: '',
-    description: ''
+    description: '',
+    arquivada: false
 }
   
   constructor(private productService: ProductService, private router: Router) { }

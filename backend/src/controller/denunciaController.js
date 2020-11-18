@@ -5,7 +5,9 @@ module.exports = {
 
     // GET (RETORNA DENUNCIA)
     async getDenuncia(req, res) {
-        const denuncia = await denunciaModel.find({});
+        const denuncia = await denunciaModel.find({
+            arquivada: false
+        });
         return res.json(denuncia)        
     },
 
@@ -16,6 +18,14 @@ module.exports = {
             id: id
         })
         return res.json(denuncia)
+    },
+
+    // GET ARQUIVADAS (RETORNA DENUNCIA ARQUIVADA)
+    async getDenunciaArquivada(req, res) {
+        const denuncia = await denunciaModel.find({
+            arquivada: true
+        });
+        return res.json(denuncia)        
     },
 
     // POST (CRIA DENUNCIA)
@@ -45,20 +55,23 @@ module.exports = {
         const email = req.body.email || "";
         const contact = req.body.contact || "";
         const description = req.body.description || "";
+        const arquivada = req.body.arquivada;
 
         var dados = {
+            id: id,
             name: name,
             category: category,
             department: department,
             date: date,
             email: email,
             contact: contact,
-            description: description
+            description: description,
+            arquivada: arquivada
         }
 
         if (name && category && department && date && email && contact && description && id) {
             var denuncia = await denunciaModel.updateOne({
-                id: id
+                id: dados.id
             }, {
                 name: dados.name,
                 category: dados.category,
@@ -67,6 +80,7 @@ module.exports = {
                 email: dados.email,
                 contact: dados.contact,
                 description: dados.description,
+                arquivada: dados.arquivada,
             });
             return res.json(denuncia);
         } else {

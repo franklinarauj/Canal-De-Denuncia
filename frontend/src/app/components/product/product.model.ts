@@ -9,4 +9,5 @@ export interface Product {
     email: string
     contact: string
     description: string
+    arquivada: boolean
 }

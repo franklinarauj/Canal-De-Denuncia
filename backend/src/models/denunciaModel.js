@@ -31,6 +31,10 @@ const denuncia = new Schema({
         type: String,
         required: true,
         maxlength: '5000'
+    },
+    arquivada: {
+        type: Boolean,
+        default: false
     }
 });
 

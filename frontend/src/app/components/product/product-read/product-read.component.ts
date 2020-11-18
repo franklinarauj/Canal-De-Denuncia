@@ -30,4 +30,10 @@ export class ProductReadComponent implements OnInit {
   navigateToProductCreate(): void {
     this.router.navigate(['/products/create'])
   }
+
+  arquivaDenuncia(product: Product): void {
+    product.arquivada = true;
+    this.productService.update(product).subscribe();
+    this.router.navigate(['/denuncias-arquivadas']);
+  }
 }

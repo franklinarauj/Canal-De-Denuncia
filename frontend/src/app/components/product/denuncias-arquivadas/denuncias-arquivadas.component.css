@@ -1,47 +1,47 @@
 table {
-    width: 100%;
+  width: 100%;
 }
 
 button {
-    position: fixed;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 10px;
-    font-size: 15px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-size: 15px;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .container {
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100vh;
-    display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
 }
 
 .container .btn-holder {
-    justify-content: flex-end;
-    display: flex;
+  justify-content: flex-end;
+  display: flex;
 }
 
-.read {
-    margin-right: 10px;
+.read{
+  margin-right: 10px;
 }
 
 .read>i {
-    color: #328bdf;
+  color: #328bdf;
+}
+
+.arquivar>i {
+  color: #ffa807;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .iconInput {
-    vertical-align: text-bottom;
-    margin-bottom: 5px;
-  }
-
-.iconTitle {
-    vertical-align: text-bottom;
-    margin-bottom: 2px;
+  vertical-align: text-bottom;
+  margin-bottom: 5px;
 }
 
-.search {
-    background-color: #328bdf;
-    justify-content: right;
-    display: flex;
+.iconTitle {
+  vertical-align: text-bottom;
+  margin-bottom: 2px;
 }

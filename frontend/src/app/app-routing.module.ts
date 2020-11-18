@@ -41,7 +41,8 @@ const routes: Routes = [{
 {
   path: "duvidas",
   component: DuvidasComponent
-}];
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
