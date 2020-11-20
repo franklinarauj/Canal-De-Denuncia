@@ -31,6 +31,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule} from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
@@ -40,6 +41,9 @@ import { DuvidasComponent } from './components/product/duvidas/duvidas.component
 
 registerLocaleData(localePt);
 
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -78,7 +82,8 @@ registerLocaleData(localePt);
     MatSortModule,
     MatDialogModule,
     MatProgressBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxMaskModule.forRoot(maskConfig)
   ],
   providers: [{
     provide: LOCALE_ID,

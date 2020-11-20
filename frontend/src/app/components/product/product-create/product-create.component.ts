@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { ProductService } from './../product.service';
 import { Product } from './../product.model';
 import { Router } from '@angular/router';
+import { NgxMaskModule } from 'ngx-mask';
 
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
-  styleUrls: ['./product-create.component.css']
+  styleUrls: ['./product-create.component.css'],
 })
+
 export class ProductCreateComponent implements OnInit {
 
  product: Product = {
@@ -21,7 +23,7 @@ export class ProductCreateComponent implements OnInit {
     description: '',
     arquivada: false
 }
-  
+ 
   constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {    
@@ -30,7 +32,7 @@ export class ProductCreateComponent implements OnInit {
   generateId(): string {
       var data = new Date(), anoAtual = data.getFullYear();
       var base = anoAtual;
-      return base + Math.random().toString(11).substr(2, 6);
+      return base + Math.random().toString().substr(2, 6);
   }
 
   createProduct(): void {
