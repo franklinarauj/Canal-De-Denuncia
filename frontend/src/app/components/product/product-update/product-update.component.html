@@ -46,7 +46,7 @@
             <mat-icon matPrefix class="material-icons iconInput">call</mat-icon>
             <!-- Assim que coloca ícones em inputs -->
             <!-- <input matInput placeholder="Telefone para Contato (Opcional)" [(ngModel)]="product.contact" name="contact" type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" maxlength="13"> -->
-            <input matInput placeholder="Telefone para Contato (Opcional)" [(ngModel)]="product.contact" name="contact" type="tel">
+            <input matInput placeholder="Telefone para Contato (Opcional)" [(ngModel)]="product.contact" mask="(00) 00000-0000" name="contact" type="tel">
         </mat-form-field>
 
         <mat-form-field *ngIf="product?.description">

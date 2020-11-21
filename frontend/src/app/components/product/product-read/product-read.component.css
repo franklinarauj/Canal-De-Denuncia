@@ -2,6 +2,10 @@ table {
   width: 100%;
 }
 
+th {
+  text-align: center;
+}
+
 button {
   justify-content: flex-end;
   margin-top: 10px;

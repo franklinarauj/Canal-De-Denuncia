@@ -23,13 +23,12 @@ button {
 
 .container .btn-holder {
     justify-content: flex-end;
-    display: flex;
 }
 
 .iconInput {
     vertical-align: text-bottom;
+    vertical-align: middle;
     margin-bottom: 5px;
-    display: flex;
     margin-right: 10px;
     font-size: 20px;
 }
