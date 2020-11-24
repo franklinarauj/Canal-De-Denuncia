@@ -18,6 +18,6 @@ Sistema de um canal de denúncia para a disciplina Projeto Integrador 6.
     $ npm install
     
 - Agora para rodar o sistema, execute um nodemon script.js no backend e um npm start no frontend
-    $ nodemon script.js &  $ npm start
+    $ nodemon server.js &  $ npm start
   
 Pronto, você já está com o projeto sendo executado em sua máquina.
