@@ -38,6 +38,8 @@ import { registerLocaleData } from '@angular/common';
 import { DenunciasArquivadasComponent } from './components/product/denuncias-arquivadas/denuncias-arquivadas.component';
 import { DenunciaComponent } from './components/product/denuncia/denuncia.component';
 import { DuvidasComponent } from './components/product/duvidas/duvidas.component';
+import { LoginComponent } from './components/product/login/login.component';
+import { SampleGuard } from './guards/sample.guard'
 
 registerLocaleData(localePt);
 
@@ -60,7 +62,8 @@ const maskConfig: Partial<IConfig> = {
     ProductDeleteComponent,
     DenunciasArquivadasComponent,
     DenunciaComponent,
-    DuvidasComponent
+    DuvidasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -85,10 +88,13 @@ const maskConfig: Partial<IConfig> = {
     MatProgressSpinnerModule,
     NgxMaskModule.forRoot(maskConfig)
   ],
-  providers: [{
+  providers: [
+    SampleGuard,
+    {
     provide: LOCALE_ID,
     useValue: 'pt-BR'
-  }],
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,7 +12,7 @@ enableProdMode();
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:3001/products";
+  //baseUrl = "http://localhost:3001/products";
 
   getDenuncia = "http://localhost:8000/getDenuncia";
   getDenunciaById = "http://localhost:8000/getDenunciaById";

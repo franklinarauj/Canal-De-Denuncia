@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './header.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { HeaderService } from './header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) { }
+  constructor(private router : Router, private headerService: HeaderService) { }
 
   ngOnInit(): void {
   }
@@ -24,4 +25,9 @@ export class HeaderComponent implements OnInit {
   get routeUrl(): string {
     return this.headerService.headerData.routeUrl
   }
+
+  navigateToLogin(): void {
+    this.router.navigate(['/login'])
+  }
+  
 }

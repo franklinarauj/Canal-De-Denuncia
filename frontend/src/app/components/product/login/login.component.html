@@ -1,0 +1,37 @@
+<mat-card class="home mat-elevation-z3">
+
+    <mat-card-title class="title" style="padding-left: 15px;">
+        *Acesso somente aos usuários do setor responsável pelas denúncias cadastradas neste sistema.*
+    </mat-card-title>
+
+</mat-card>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <mat-form-field appearance="outline">
+                <mat-label>E-mail ou Usuário</mat-label>
+                <input matInput placeholder="Digite seu e-mail ou usuário">
+                <mat-hint>E-mail deve ser institucional.</mat-hint>
+            </mat-form-field>
+            <mat-form-field appearance="outline" style="margin-left: 5px;">
+                <mat-label>Senha</mat-label>
+                <input matInput placeholder="Digite sua senha" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <i class="material-icons">{{hide ? 'visibility_off' : 'visibility'}}</i>
+                </button>
+                <mat-hint>Senha deve conter de 6 a 8 caracteres.</mat-hint>
+            </mat-form-field>
+            <button class="entrar" mat-button (click)="navigateToHome()">
+                Entrar
+                <i class="material-icons" style="margin-bottom: 2px;">
+                    arrow_forward_ios
+                </i>
+            </button>
+        </div>
+        <div class="container-box">
+            <span style="text-align: justify;">Não compartilhe suas informações de acesso com ninguém!</span>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,54 @@
+/* .container .mat-form-field {
+    margin-left: 25px;
+} */
+
+.title {
+    font-size: 2.35rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.container {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 600px;
+    height: 150px;
+    background-color: #c2185b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.container-box{
+    width: 400px;
+    height: 50px;
+    margin-top: 5px;
+    background-color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+body {
+    margin: 0px;
+}
+
+mat-label {
+    color: white;
+}
+
+.entrar {
+    margin-left: 15px;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 15px;
+}

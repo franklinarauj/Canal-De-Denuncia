@@ -13,5 +13,8 @@
     "express": "^4.17.1",
     "json-server": "^0.16.1",
     "mongoose": "^5.10.14"
+  },
+  "scripts": {
+    "criarUsuario": "node criarUsuario.js"
   }
 }

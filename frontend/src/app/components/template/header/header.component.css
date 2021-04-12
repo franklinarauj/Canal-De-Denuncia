@@ -22,3 +22,10 @@
 .header .title-group i {
     padding-right: 5px;
 }
+
+.login {
+    flex: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+}
