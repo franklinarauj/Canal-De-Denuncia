@@ -2,7 +2,6 @@ const axios = require('axios');
 const denunciaModel = require('../models/denunciaModel');
 
 module.exports = {
-
     // GET (RETORNA DENUNCIA)
     async getDenuncia(req, res) {
         const denuncia = await denunciaModel.find({

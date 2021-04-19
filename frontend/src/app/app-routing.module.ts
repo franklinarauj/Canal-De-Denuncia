@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './components/product/login/login.component';
+import { CadastroComponent } from './components/product/cadastro/cadastro.component';
 import { ProductCrudComponent } from './views/product-crud/product-crud.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -19,6 +20,10 @@ const routes: Routes = [{
 {
   path: "login",
   component: LoginComponent
+},
+{
+  path: "cadastro",
+  component: CadastroComponent
 },
 {
   path: "products",
@@ -47,9 +52,8 @@ const routes: Routes = [{
 {
   path: "duvidas",
   component: DuvidasComponent,
-  // canActivate: [SampleGuard] TÁ FUNCIONANDO!
+  //canActivate: [SampleGuard] // TÁ FUNCIONANDO!
 }
-
 ];
 
 @NgModule({

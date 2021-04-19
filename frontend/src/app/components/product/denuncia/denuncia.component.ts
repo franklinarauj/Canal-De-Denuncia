@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from './../product.service';
 import { Product } from './../product.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-denuncia',
@@ -10,7 +11,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DenunciaComponent implements OnInit {
   
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private router: Router, 
+    private route: ActivatedRoute, public dialog: MatDialog) { }
   
   product: Product;
 
@@ -30,4 +32,18 @@ export class DenunciaComponent implements OnInit {
     this.router.navigate(['/denuncias-arquivadas'])
   }
 
+  sendEmail() {
+    const dialogRef = this.dialog.open(DialogContentEmail);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+
+@Component({
+  selector: 'dialog-content-email',
+  templateUrl: 'dialog-content-email.html',
+  styleUrls: ['dialog-content-email.css'],
+})
+export class DialogContentEmail {}

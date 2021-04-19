@@ -38,10 +38,9 @@ export class ProductCreateComponent implements OnInit {
   createProduct(): void {
     this.product.id = this.generateId();
     this.productService.create(this.product).subscribe(() => {
-    this.productService.showMessage('Denúncia criada!')
-    this.router.navigate(['/products'])
-  })
-
+      this.productService.showMessage('Denúncia criada!')
+      this.router.navigate(['/products'])
+    })
   }
 
   cancel(): void {
@@ -57,5 +56,4 @@ export class ProductCreateComponent implements OnInit {
     this.product.contact = '';
     this.product.description = '';
   }
-
 }

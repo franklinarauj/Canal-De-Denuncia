@@ -37,8 +37,10 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { DenunciasArquivadasComponent } from './components/product/denuncias-arquivadas/denuncias-arquivadas.component';
 import { DenunciaComponent } from './components/product/denuncia/denuncia.component';
+import { DialogContentEmail } from './components/product/denuncia/denuncia.component';
 import { DuvidasComponent } from './components/product/duvidas/duvidas.component';
 import { LoginComponent } from './components/product/login/login.component';
+import { CadastroComponent } from './components/product/cadastro/cadastro.component';
 import { SampleGuard } from './guards/sample.guard'
 
 registerLocaleData(localePt);
@@ -62,8 +64,10 @@ const maskConfig: Partial<IConfig> = {
     ProductDeleteComponent,
     DenunciasArquivadasComponent,
     DenunciaComponent,
+    DialogContentEmail,
     DuvidasComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

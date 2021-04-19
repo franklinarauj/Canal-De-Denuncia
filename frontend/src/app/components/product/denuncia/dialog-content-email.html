@@ -1,0 +1,41 @@
+<mat-card-title>
+    <i class="material-icons iconTitle">
+        email
+    </i>
+    Preencher E-mail
+</mat-card-title>
+
+<mat-divider></mat-divider>
+
+<mat-dialog-content class="mat-typography" style="margin-top: 7px; width: 720px; height: 480px;">
+
+    <form>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">title</mat-icon>
+            <!-- Assim que coloca ícones em inputs -->
+            <mat-label>Assunto</mat-label>
+            <input matInput placeholder="Ex.: Solicitação de Informação" name="assunto">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-icon matPrefix class="material-icons iconInput">comment</mat-icon>
+            <!-- Assim que coloca ícones em inputs -->
+            <mat-label>Descrição do E-mail</mat-label>
+            <textarea matInput placeholder="Insira seu texto aqui..." name="description" type="text" cols="80" maxlength="10000"></textarea>
+        </mat-form-field>
+
+    </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>
+        Enviar
+        <i class="material-icons" style="margin-left: 5px;">
+            send
+        </i>
+    </button>
+
+</mat-dialog-actions>

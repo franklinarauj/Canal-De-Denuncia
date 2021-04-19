@@ -29,5 +29,9 @@ export class HeaderComponent implements OnInit {
   navigateToLogin(): void {
     this.router.navigate(['/login'])
   }
+
+  navigateToCadastro(): void {
+    this.router.navigate(['/cadastro'])
+  }
   
 }

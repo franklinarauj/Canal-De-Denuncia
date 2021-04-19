@@ -1,0 +1,56 @@
+/* .container .mat-form-field {
+    margin-left: 25px;
+} */
+
+.title {
+    font-size: 2.30rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.container {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 825px;
+    height: 150px;
+    background-color: #c2185b;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.container-box{
+    width: 800px;
+    height: 75px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding: 0px 10px 0px 10px;
+    background-color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+body {
+    margin: 0px;
+}
+
+mat-label {
+    color: white;
+}
+
+.cadastrar {
+    margin-left: 15px;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 15px;
+}
