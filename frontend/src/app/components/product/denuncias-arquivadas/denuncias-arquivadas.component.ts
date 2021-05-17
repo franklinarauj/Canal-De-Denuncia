@@ -19,8 +19,14 @@ export class DenunciasArquivadasComponent implements OnInit {
   
   @Input('id')
   id: string;
-  
+
+  jsonLogin = {};
   ngOnInit(): void {
+    this.jsonLogin = JSON.parse(localStorage.getItem('loginDenuncias'));
+    if (!this.jsonLogin || !this.jsonLogin['email']) {
+      this.jsonLogin = {};
+      this.router.navigate(['/login'])
+    }
     this.productService.readArquivada().subscribe(products => {
       this.products = products
       console.log(products)

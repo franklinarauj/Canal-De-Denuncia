@@ -10,8 +10,14 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor(private router : Router, private headerService: HeaderService) { }
+  jsonLogin = {};
 
   ngOnInit(): void {
+    this.jsonLogin = JSON.parse(localStorage.getItem('loginDenuncias'));
+    if (!this.jsonLogin || !this.jsonLogin['email']) {
+      this.jsonLogin = {};
+    }
+
   }
 
   get title(): string {
@@ -32,6 +38,11 @@ export class HeaderComponent implements OnInit {
 
   navigateToCadastro(): void {
     this.router.navigate(['/cadastro'])
+  }
+
+  logout(): void {
+    localStorage.setItem('loginDenuncias', JSON.stringify({}));
+    location.reload();
   }
   
 }

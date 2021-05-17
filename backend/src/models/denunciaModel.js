@@ -38,4 +38,4 @@ const denuncia = new Schema({
     }
 });
 
-module.exports = model('Denuncia', denuncia);
+module.exports = model('Denuncias', denuncia);

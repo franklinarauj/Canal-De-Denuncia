@@ -1,0 +1,16 @@
+.iconInput {
+    display: flex;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #ffffff80;
+}
+
+.iconTitle {
+    vertical-align: text-bottom;
+    margin-bottom: 2px;
+}
+
+.container {
+    justify-content: space-between;
+    display: flex;
+}

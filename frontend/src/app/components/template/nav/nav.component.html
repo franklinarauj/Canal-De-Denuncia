@@ -8,13 +8,19 @@
                 </i>
                 Início
             </a>
-            <a mat-list-item routerLink="/products">
+            <a *ngIf="jsonLogin && jsonLogin['email']" mat-list-item routerLink="/products">
                 <i class="material-icons">
                     topic
                 </i>
                 Denúncias
             </a>
-            <a mat-list-item routerLink="/denuncias-arquivadas">
+            <a mat-list-item routerLink="/products/create">
+                <i class="material-icons">
+                    add
+                </i>
+                Criar Denúncia
+            </a>
+            <a *ngIf="jsonLogin && jsonLogin['email']" mat-list-item routerLink="/denuncias-arquivadas">
                 <i class="material-icons">
                     archive
                 </i>
@@ -25,6 +31,12 @@
                     contact_support
                 </i>
                 Dúvidas
+            </a>
+            <a mat-list-item (click)="openAutores()" style="bottom: 0; position: absolute; margin-bottom: 8px;">
+                <i class="material-icons">
+                    people_alt
+                </i>
+                Autores
             </a>
         </mat-nav-list>
     </mat-sidenav>

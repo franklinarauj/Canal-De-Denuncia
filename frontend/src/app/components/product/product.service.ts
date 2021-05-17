@@ -21,6 +21,11 @@ export class ProductService {
   editDenuncia = "http://localhost:8000/editDenuncia";
   deleteDenuncia = "http://localhost:8000/deleteDenuncia";
 
+  // Depois deve-se mudar para outro arquivo.
+  getUsuarioByEmail = "http://localhost:8000/getUsuarioByEmail";
+  createUsuarioUrl = "http://localhost:8000/createUsuario";
+  doLoginUrl = "http://localhost:8000/doLogin";
+
   constructor(
     private snackBar: MatSnackBar, 
     private http: HttpClient
@@ -108,6 +113,32 @@ export class ProductService {
       map(obj => obj),
       catchError(e => this.errorHandler(e))
       );
+  }
+
+  // Não deveria estar aqui, checa usuários por e-mail.
+  readByEmail(formLogin): Observable<any> {
+    const url = `${this.getUsuarioByEmail}`;
+    return this.http.post<any>(url, formLogin).pipe(
+        map(obj => obj),
+        catchError(e => this.errorHandler(e))
+    );
+  }
+
+  // Não deveria estar aqui.
+  createUsuario(formLogin): Observable<any> {
+    const url = `${this.createUsuarioUrl}`;
+    return this.http.post<any>(url, formLogin).pipe(
+        map(obj => obj),
+        catchError(e => this.errorHandler(e))
+    );
+  }
+  // Não deveria estar aqui.
+  doLogin(formLogin): Observable<any> {
+    const url = `${this.doLoginUrl}`;
+    return this.http.post<any>(url, formLogin).pipe(
+        map(obj => obj),
+        catchError(e => this.errorHandler(e))
+    );
   }
 
 }

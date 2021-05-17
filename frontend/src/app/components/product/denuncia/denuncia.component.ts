@@ -15,8 +15,14 @@ export class DenunciaComponent implements OnInit {
     private route: ActivatedRoute, public dialog: MatDialog) { }
   
   product: Product;
+  jsonLogin = {}
 
   ngOnInit(): void {
+    this.jsonLogin = JSON.parse(localStorage.getItem('loginDenuncias'));
+    if (!this.jsonLogin || !this.jsonLogin['email']) {
+      this.jsonLogin = {};
+      this.router.navigate(['/login'])
+    }
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.readById(id).subscribe(product => {
       this.product = product;

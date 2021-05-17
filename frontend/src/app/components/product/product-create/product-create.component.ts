@@ -39,7 +39,7 @@ export class ProductCreateComponent implements OnInit {
     this.product.id = this.generateId();
     this.productService.create(this.product).subscribe(() => {
       this.productService.showMessage('Denúncia criada!')
-      this.router.navigate(['/products'])
+      this.router.navigate([''])
     })
   }
 

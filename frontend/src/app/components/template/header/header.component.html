@@ -14,18 +14,38 @@
         </a>
         <mat-progress-bar mode="query" color="accent"></mat-progress-bar>
     </span>
-    <span class="login-cadastro">
-        <button mat-button (click)="navigateToLogin()">
-            Login
-            <i class="material-icons">
-                login
+    <div *ngIf="!jsonLogin || !jsonLogin['email']" class="login-cadastro">
+        <span>
+            <button mat-button (click)="navigateToLogin()">
+                Login
+
+                <i class="material-icons">
+                    login
+                </i>
+            </button>            
+        </span>
+    </div>
+    <div *ngIf="jsonLogin && jsonLogin['email']" class="login-cadastro">
+        <span>
+            <i style="font-size: medium; color: #e35e6b; text-decoration: underline; text-decoration-color: white;">
+                {{this.jsonLogin['email']}}
             </i>
-        </button>
-        <button mat-button (click)="navigateToCadastro()">
-            Cadastro
-            <i class="material-icons">
+            <i class="material-icons" style="vertical-align: middle;">
                 how_to_reg
             </i>
-        </button>
-    </span>
+            <label style="margin-left: 16px; border-right: 2px solid white;"></label>
+            <button mat-button (click)="navigateToCadastro()">
+                Cadastro
+                <i class="material-icons">
+                    group_add
+                </i>
+            </button>
+            <button mat-button (click)="logout()">
+                Logout
+                <i class="material-icons">
+                    login
+                </i>
+            </button>
+        </span>
+    </div>
 </mat-toolbar>

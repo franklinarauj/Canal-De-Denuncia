@@ -19,8 +19,14 @@ export class ProductReadComponent implements OnInit {
 
   constructor(private router : Router, private productService: ProductService) {
    }
-
+   
+  jsonLogin = {};
   ngOnInit(): void {
+    this.jsonLogin = JSON.parse(localStorage.getItem('loginDenuncias'));
+    if (!this.jsonLogin || !this.jsonLogin['email']) {
+      this.jsonLogin = {};
+      this.router.navigate(['/login'])
+    }
     this.productService.read().subscribe(products => {
       this.products = products
       console.log(products)
