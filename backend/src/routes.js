@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const denunciaController = require('../src/controller/denunciaController');
 const loginController = require('../src/controller/loginController');
+const emailController = require('../src/controller/emailController');
 
 router.get('/getDenuncia', denunciaController.getDenuncia);
 router.get('/getDenunciaById/:id', denunciaController.getDenunciaById);
@@ -14,6 +15,7 @@ router.get('/getUsuario', loginController.getUsuario);
 router.post('/getUsuarioByEmail', loginController.getUsuarioByEmail);
 router.post('/createUsuario', loginController.createUsuario);
 router.post('/doLogin', loginController.doLogin);
+router.post('/sendEmail', emailController.sendEmail);
 router.post('/login', passport.authenticate('local'), (req, res) => {
         req.user ? res.sendStatus(200) : res.sendStatus(401)
     }

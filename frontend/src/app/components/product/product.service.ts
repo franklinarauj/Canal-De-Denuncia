@@ -25,9 +25,10 @@ export class ProductService {
   getUsuarioByEmail = "http://localhost:8000/getUsuarioByEmail";
   createUsuarioUrl = "http://localhost:8000/createUsuario";
   doLoginUrl = "http://localhost:8000/doLogin";
+  sendEmailUrl = "http://localhost:8000/sendEmail";
 
   constructor(
-    private snackBar: MatSnackBar, 
+    private snackBar: MatSnackBar,
     private http: HttpClient
     ) {}
 
@@ -39,7 +40,7 @@ export class ProductService {
       panelClass: isError ? ['msg-error'] : ['msg-success']
     });
   }
-  
+
    errorHandler(e: any): Observable<any> {
     this.showMessage('Ocorreu um erro!', true);
     return EMPTY
@@ -136,6 +137,15 @@ export class ProductService {
   doLogin(formLogin): Observable<any> {
     const url = `${this.doLoginUrl}`;
     return this.http.post<any>(url, formLogin).pipe(
+        map(obj => obj),
+        catchError(e => this.errorHandler(e))
+    );
+  }
+
+  // Não deveria estar aqui.
+  sendEmail(formEmail): Observable<any> {
+    const url = `${this.sendEmailUrl}`;
+    return this.http.post<any>(url, formEmail).pipe(
         map(obj => obj),
         catchError(e => this.errorHandler(e))
     );
